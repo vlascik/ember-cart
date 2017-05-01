@@ -9,7 +9,7 @@ export function initialize(appInstance) {
 
   let payload;
 
-  if (window.localStorage.getItem('cart')) {
+  if (window.localStorage && window.localStorage.getItem('cart')) {
     payload = window.localStorage.getItem('cart');
     payload = JSON.parse(payload);
   }

@@ -69,7 +69,7 @@ const Service = ArrayProxy.extend({
   counter: computed.alias('length'),
 
   _dumpToLocalStorage: observer('[]', '@each.quantity', on('init', function() {
-    if (this.localStorage) {
+    if (this.localStorage && window.localStorage) {
       window.localStorage.setItem('cart', JSON.stringify(this.payload()));
     }
   }))
